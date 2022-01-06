@@ -1,0 +1,641 @@
+* {
+  margin: 0; }
+
+html {
+  font-size: 12.5px;
+  height: 100%;
+  min-width: 100%; }
+  html.mobile-safari {
+    overflow: hidden;
+    height: calc(100% - 50px); }
+    html.mobile-safari div.page-container {
+      top: calc(50% - 25px); }
+    html.mobile-safari div.frame-scrobbler {
+      top: calc(50% - 25px); }
+    html.mobile-safari div.hud {
+      height: calc(100% - 50px); }
+
+body {
+  background: #282828 url(../img/bg.jpg) center no-repeat;
+  background-size: cover;
+  font-size: 125%;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden; }
+
+a {
+  color: #fff;
+  text-decoration: underline; }
+
+.viewport-sizer {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%); }
+
+.frame-scrobbler {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%; }
+  .frame-scrobbler canvas {
+    width: 100%;
+    height: 100%; }
+  .frame-scrobbler img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; }
+  .frame-scrobbler img.show {
+    display: block;
+    z-index: 1; }
+
+.page-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .page-container div.swiper-slide {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .page-container div.swiper-slide div.hitboxes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+      .page-container div.swiper-slide div.hitboxes div.tile {
+        position: absolute;
+        opacity: 0.9;
+        cursor: pointer; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="anthony-bourdain"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="eleanor-roosevelt"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="the-ramones"] {
+          width: 18%;
+          height: 6%;
+          left: 25%;
+          top: 38%; }
+          .page-container div.swiper-slide div.hitboxes div.tile[data-target="anthony-bourdain"].portrait, .page-container div.swiper-slide div.hitboxes div.tile[data-target="eleanor-roosevelt"].portrait, .page-container div.swiper-slide div.hitboxes div.tile[data-target="the-ramones"].portrait {
+            width: 14%;
+            height: 20%;
+            left: 43%;
+            top: 25%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="monsieur-saint-jour"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="milkorno"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="leather-jacket"] {
+          width: 11%;
+          height: 7%;
+          left: 25%;
+          top: 44%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="cigarette-break"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="freedom"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="hey-ho-lets-go"] {
+          width: 11%;
+          height: 8%;
+          left: 36%;
+          top: 45%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="after-hours"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="birds-of-a-feather"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="g-o-a-t"] {
+          width: 11%;
+          height: 7.5%;
+          left: 24%;
+          top: 52%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="ella-fitzgerald"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="robert-downey-jr"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="vera-wang"] {
+          width: 18%;
+          height: 6%;
+          right: 25%;
+          top: 38%; }
+          .page-container div.swiper-slide div.hitboxes div.tile[data-target="ella-fitzgerald"].portrait, .page-container div.swiper-slide div.hitboxes div.tile[data-target="robert-downey-jr"].portrait, .page-container div.swiper-slide div.hitboxes div.tile[data-target="vera-wang"].portrait {
+            width: 14%;
+            height: 20%;
+            left: 43%;
+            top: auto;
+            bottom: 22%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="apollo"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="love-3000"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="golden-hour"] {
+          width: 11%;
+          top: 45%;
+          right: 36%;
+          height: 8%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="harlem-nights"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="analogue"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="kukuihaele"] {
+          width: 11%;
+          top: 44%;
+          right: 25%;
+          height: 7%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="lady-of-song"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="kiss-cry"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="chaplin-92"] {
+          width: 11%;
+          top: 52%;
+          right: 24%;
+          height: 7.5%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="the-rickhouse"], .page-container div.swiper-slide div.hitboxes div.tile[data-target="friends-of-manhattan"] {
+          width: 52%;
+          left: 24%;
+          height: 28%;
+          top: 36%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="tea-soda-fountain"] {
+          width: 20%;
+          left: 24%;
+          top: 36%;
+          height: 28%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="the-flowing-bowl"] {
+          width: 20%;
+          right: 24%;
+          top: 36%;
+          height: 28%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="spirits-menu"] {
+          width: 12%;
+          left: 44%;
+          top: 50%;
+          height: 2.2%; }
+        .page-container div.swiper-slide div.hitboxes div.tile[data-target="food-dessert"] {
+          width: 12%;
+          left: 44%;
+          top: 52.2%;
+          height: 2.2%; }
+
+div.popover {
+  position: fixed;
+  z-index: 0;
+  background: #d9cdbb;
+  color: #1a1818;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translate(0, 30%);
+  transition: all ease 0.35s;
+  top: 100%;
+  left: 0;
+  pointer-events: none; }
+  div.popover.show {
+    opacity: 1;
+    top: 0;
+    transform: translate(0, 0);
+    z-index: 40;
+    pointer-events: all; }
+  div.popover > a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    z-index: 4; }
+    div.popover > a[data-action="close-popover"] {
+      top: 3%;
+      right: 5%; }
+      div.popover > a[data-action="close-popover"] img {
+        width: 80%; }
+    div.popover > a[data-action="prev-slide-in-set"] {
+      top: 3%;
+      left: 5%; }
+      div.popover > a[data-action="prev-slide-in-set"].hide {
+        display: none; }
+      div.popover > a[data-action="prev-slide-in-set"] img {
+        width: 40%; }
+    div.popover > a[data-action="next-slide-in-set"] {
+      top: 3%;
+      left: 10%;
+      transform: scale(-1, 1); }
+      div.popover > a[data-action="next-slide-in-set"].hide {
+        display: none; }
+      div.popover > a[data-action="next-slide-in-set"] img {
+        width: 40%; }
+  div.popover div.popover-slide {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    left: 0;
+    top: 100%;
+    position: absolute; }
+    div.popover div.popover-slide.show {
+      pointer-events: auto;
+      top: 0; }
+      div.popover div.popover-slide.show .image img {
+        transform: translate(0, 0);
+        opacity: 1; }
+    div.popover div.popover-slide.person {
+      font-weight: 500; }
+      div.popover div.popover-slide.person div.person-header {
+        position: relative;
+        margin-bottom: 2rem;
+        transform: translate(0, 30%);
+        opacity: 0;
+        transition: all ease 0.6s;
+        transition-delay: 0.3s; }
+        div.popover div.popover-slide.person div.person-header h1 {
+          width: 100%;
+          box-sizing: border-box;
+          height: 0;
+          padding: 17.5% 0 0 0;
+          text-indent: -2000em; }
+      div.popover div.popover-slide.person div.person-description {
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1.222;
+        clear: both;
+        padding-bottom: 1.5rem;
+        transform: translate(0, 30%);
+        opacity: 0;
+        transition: all ease 0.6s;
+        transition-delay: 0.5s; }
+        @media screen and (min-width: 900px) {
+          div.popover div.popover-slide.person div.person-description {
+            font-size: 1.4rem; } }
+        div.popover div.popover-slide.person div.person-description p {
+          margin-bottom: 1em;
+          margin-right: 0.8em; }
+      div.popover div.popover-slide.person.show div.person-header,
+      div.popover div.popover-slide.person.show div.person-description {
+        transform: translate(0, 0);
+        opacity: 1; }
+      div.popover div.popover-slide.person[data-content="anthony-bourdain"] h1 {
+        background: url(../img/old/names/anthony-bourdain.png) center no-repeat;
+        background-size: contain; }
+      div.popover div.popover-slide.person[data-content="ella-fitzgerald"] h1 {
+        background: url(../img/old/names/ella-fitzgerald.png) center no-repeat;
+        background-size: contain; }
+      div.popover div.popover-slide.person[data-content="eleanor-roosevelt"] h1 {
+        background: url(../img/old/names/eleanor-roosevelt.png) center no-repeat;
+        background-size: contain; }
+      div.popover div.popover-slide.person[data-content="robert-downey-jr"] h1 {
+        background: url(../img/old/names/robert-downey-jr.png) center no-repeat;
+        background-size: contain; }
+      div.popover div.popover-slide.person[data-content="the-ramones"] h1 {
+        background: url(../img/old/names/the-ramones.png) center no-repeat;
+        background-size: contain; }
+      div.popover div.popover-slide.person[data-content="vera-wang"] h1 {
+        background: url(../img/old/names/vera-wang.png) center no-repeat;
+        background-size: contain; }
+    div.popover div.popover-slide.menu-item {
+      font-weight: 500; }
+      div.popover div.popover-slide.menu-item h1 {
+        text-transform: uppercase;
+        font-size: 2.2em;
+        opacity: 0;
+        transition: opacity ease 0.6s;
+        transition-delay: 0.3s;
+        transform: translate(0, 50%);
+        margin: 1em 0 0.5em 0; }
+      div.popover div.popover-slide.menu-item div.menu-listing {
+        margin: 0 0 4rem 0; }
+        div.popover div.popover-slide.menu-item div.menu-listing div.menu-item-header {
+          margin-bottom: 1rem; }
+          div.popover div.popover-slide.menu-item div.menu-listing div.menu-item-header span.name {
+            font-size: 1.4em; }
+            @media screen and (min-width: 900px) {
+              div.popover div.popover-slide.menu-item div.menu-listing div.menu-item-header span.name {
+                font-size: 1.6em; } }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(2) div.menu-item-header {
+          transition-delay: 0.4s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(2) div.menu-item-ingredients {
+          transition-delay: 0.5s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(3) div.menu-item-header {
+          transition-delay: 0.6s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(3) div.menu-item-ingredients {
+          transition-delay: 0.7s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(4) div.menu-item-header {
+          transition-delay: 0.8s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(4) div.menu-item-ingredients {
+          transition-delay: 0.9s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(5) div.menu-item-header {
+          transition-delay: 1s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(5) div.menu-item-ingredients {
+          transition-delay: 1.1s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(6) div.menu-item-header {
+          transition-delay: 1.2s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(6) div.menu-item-ingredients {
+          transition-delay: 1.3s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(7) div.menu-item-header {
+          transition-delay: 1.4s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(7) div.menu-item-ingredients {
+          transition-delay: 1.5s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(8) div.menu-item-header {
+          transition-delay: 1.6s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(8) div.menu-item-ingredients {
+          transition-delay: 1.7s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(9) div.menu-item-header {
+          transition-delay: 1.8s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(9) div.menu-item-ingredients {
+          transition-delay: 1.9s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(10) div.menu-item-header {
+          transition-delay: 2s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(10) div.menu-item-ingredients {
+          transition-delay: 2.1s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(11) div.menu-item-header {
+          transition-delay: 2.2s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(11) div.menu-item-ingredients {
+          transition-delay: 2.3s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(12) div.menu-item-header {
+          transition-delay: 2.4s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(12) div.menu-item-ingredients {
+          transition-delay: 2.5s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(13) div.menu-item-header {
+          transition-delay: 2.6s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(13) div.menu-item-ingredients {
+          transition-delay: 2.7s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(14) div.menu-item-header {
+          transition-delay: 2.8s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(14) div.menu-item-ingredients {
+          transition-delay: 2.9s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(15) div.menu-item-header {
+          transition-delay: 3s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(15) div.menu-item-ingredients {
+          transition-delay: 3.1s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(16) div.menu-item-header {
+          transition-delay: 3.2s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(16) div.menu-item-ingredients {
+          transition-delay: 3.3s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(17) div.menu-item-header {
+          transition-delay: 3.4s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(17) div.menu-item-ingredients {
+          transition-delay: 3.5s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(18) div.menu-item-header {
+          transition-delay: 3.6s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(18) div.menu-item-ingredients {
+          transition-delay: 3.7s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(19) div.menu-item-header {
+          transition-delay: 3.8s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(19) div.menu-item-ingredients {
+          transition-delay: 3.9s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(20) div.menu-item-header {
+          transition-delay: 4s; }
+        div.popover div.popover-slide.menu-item div.menu-listing:nth-child(20) div.menu-item-ingredients {
+          transition-delay: 4.1s; }
+      div.popover div.popover-slide.menu-item div.menu-item-header {
+        position: relative;
+        margin-bottom: 2rem;
+        transform: translate(0, 30%);
+        opacity: 0;
+        transition: all ease 0.6s;
+        transition-delay: 0.3s; }
+        div.popover div.popover-slide.menu-item div.menu-item-header::after {
+          content: " ";
+          display: block;
+          clear: both; }
+        div.popover div.popover-slide.menu-item div.menu-item-header span.name {
+          display: block;
+          float: left;
+          font-size: 2em;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-right: 2em; }
+          @media screen and (min-width: 900px) {
+            div.popover div.popover-slide.menu-item div.menu-item-header span.name {
+              font-size: 2.4em; } }
+        div.popover div.popover-slide.menu-item div.menu-item-header span.subtitle {
+          display: block;
+          float: left;
+          clear: left;
+          margin-right: 2em;
+          font-size: 1.2em; }
+          @media screen and (min-width: 900px) {
+            div.popover div.popover-slide.menu-item div.menu-item-header span.subtitle {
+              font-size: 1.4em; } }
+        div.popover div.popover-slide.menu-item div.menu-item-header span.price {
+          position: absolute;
+          top: 0.1em;
+          right: 0;
+          font-size: 1.75em;
+          font-weight: 600; }
+          @media screen and (min-width: 900px) {
+            div.popover div.popover-slide.menu-item div.menu-item-header span.price {
+              top: 0.6em;
+              font-size: 1.9em; } }
+      div.popover div.popover-slide.menu-item div.menu-item-ingredients {
+        display: block;
+        font-size: 1.2em;
+        line-height: 1.222;
+        clear: both;
+        margin-bottom: 2em;
+        transform: translate(0, 30%);
+        opacity: 0;
+        transition: all ease 0.6s;
+        transition-delay: 0.4s;
+        font-weight: 600; }
+        @media screen and (min-width: 900px) {
+          div.popover div.popover-slide.menu-item div.menu-item-ingredients {
+            font-size: 1.4em; } }
+      div.popover div.popover-slide.menu-item div.menu-item-description {
+        display: block;
+        font-size: 1.2em;
+        line-height: 1.222;
+        clear: both;
+        padding-bottom: 1.5em;
+        transform: translate(0, 30%);
+        opacity: 0;
+        transition: all ease 0.6s;
+        transition-delay: 0.5s; }
+        @media screen and (min-width: 900px) {
+          div.popover div.popover-slide.menu-item div.menu-item-description {
+            font-size: 1.4em; } }
+        div.popover div.popover-slide.menu-item div.menu-item-description p {
+          margin-bottom: 1em;
+          margin-right: 0.8em; }
+      div.popover div.popover-slide.menu-item.show h1,
+      div.popover div.popover-slide.menu-item.show div.menu-item-header,
+      div.popover div.popover-slide.menu-item.show div.menu-item-ingredients,
+      div.popover div.popover-slide.menu-item.show div.menu-item-description {
+        transform: translate(0, 0);
+        opacity: 1; }
+    div.popover div.popover-slide .text-wrapper {
+      width: 50%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      position: absolute;
+      overflow: hidden; }
+      div.popover div.popover-slide .text-wrapper .text {
+        position: absolute;
+        width: 106%;
+        height: 86%;
+        padding-right: 16%;
+        padding-left: 12%;
+        box-sizing: border-box;
+        top: 14%;
+        overflow-y: scroll;
+        font-size: 1rem; }
+        div.popover div.popover-slide .text-wrapper .text.single-menu {
+          height: 92%;
+          top: 8%; }
+    div.popover div.popover-slide .image {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0; }
+      div.popover div.popover-slide .image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        transform: translate(0, 50%);
+        opacity: 0;
+        transition: all ease 0.5s; }
+
+div.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none; }
+  div.hud img.logo {
+    width: 8%;
+    width: 12vmin;
+    max-width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 6%;
+    transform: translate(-50%, 0); }
+  div.hud .tagline {
+    width: 45vh;
+    max-width: 500px;
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-90deg);
+    transform-origin: 50% 0;
+    color: white;
+    text-indent: -3000em; }
+    div.hud .tagline:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url(../img/old/tagline.svg) top center no-repeat;
+      width: 100%;
+      height: 0;
+      padding-top: 15%;
+      transform: translate(0%, -50%); }
+  div.hud div.prev-next-btn {
+    display: flex;
+    width: 12%;
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    box-sizing: border-box; }
+    div.hud div.prev-next-btn > div {
+      width: 50%;
+      height: 0;
+      padding-top: 50%;
+      box-sizing: border-box;
+      position: relative; }
+      div.hud div.prev-next-btn > div a {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-indent: -2000em;
+        background-size: 30%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/old/navigate-arrow-black.svg);
+        pointer-events: auto;
+        cursor: pointer;
+        filter: invert(100%);
+        outline: 0; }
+      div.hud div.prev-next-btn > div.next-slide-btn {
+        transform: scale(-1, 1); }
+  div.hud div.hints {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    width: 90%;
+    height: 3em;
+    font-size: 1.2rem;
+    font-size: 1.2vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    z-index: 0;
+    transform: translate(-50%, 0); }
+    div.hud div.hints > div {
+      text-align: center;
+      position: absolute;
+      bottom: -4em;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, 0);
+      opacity: 0;
+      transition: bottom ease 1.2s, opacity ease 1.5s; }
+      div.hud div.hints > div[data-hint="more-info"] {
+        left: auto;
+        right: 0;
+        width: 60%;
+        transform: none;
+        text-align: right;
+        line-height: 1.2; }
+      div.hud div.hints > div.show {
+        bottom: 0;
+        opacity: 1; }
+
+div.roadblock {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: url(../img/bg.jpg) center no-repeat;
+  background-size: cover; }
+  @media screen and (min-aspect-ratio: 5 / 4) {
+    div.roadblock {
+      display: none;
+      z-index: 0; } }
+  div.roadblock img.logo {
+    width: 120px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  div.roadblock img.orientation {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 0%); }
+
+div.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 201;
+  background: url(../img/bg.jpg) center no-repeat;
+  background-size: cover;
+  transition: opacity 0.8s ease;
+  opacity: 1; }
+  div.loading.hiding {
+    opacity: 0; }
+  div.loading.hide {
+    display: none;
+    z-index: 0; }
+  div.loading img.logo {
+    width: 120px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  div.loading svg#progress {
+    width: 140px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    div.loading svg#progress .progress {
+      stroke-width: 3px;
+      stroke: #fff;
+      stroke-dasharray: 396px;
+      stroke-dashoffset: 396px;
+      transition: all ease 0.2s; }
