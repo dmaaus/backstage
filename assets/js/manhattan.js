@@ -84,7 +84,7 @@ var mobileSafari;
 		targetScrollProgress = p1;
 
 		scrollProgress +=
-			Math.round(((targetScrollProgress - scrollProgress) / 15) * 1000) / 1000;
+			Math.round(((targetScrollProgress - scrollProgress) / 10) * 1000) / 1000;
 
 		var index_p1 = Math.floor(p1);
 		var fraction_p1 = scrollProgress - index_p1;
@@ -128,9 +128,8 @@ var mobileSafari;
 
 	var imgArr = [];
 
-	//TODO: frames number 185
-	for (var i = 10001; i < 10033; i++) {
-		imgArr.push("assets/img/new/frames/frame/" + i + ".jpg");
+	for (var i = 10001; i < 10185; i++) {
+		imgArr.push("assets/img/old/frames/frame/" + i + ".jpg");
 	}
 
 	imgArr = imgArr.concat(
@@ -167,7 +166,6 @@ var mobileSafari;
 
 	preloader.load();
 
-	//TODO: Speed for page turn
 	swiper = new Swiper(".page-container", {
 		direction: "horizontal",
 		slidesPerView: 1,
@@ -372,5 +370,4 @@ var mobileSafari;
 			imagesLoadProgress: imagesLoadProgress,
 		});
 	};
-
 })(jQuery);
