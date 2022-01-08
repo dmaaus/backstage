@@ -499,7 +499,7 @@ div.hud {
     left: 6%;
     transform: translate(-50%, 0); }
   div.hud .tagline {
-    width: 100vh;
+    width: 45vh;
     max-width: 500px;
     position: absolute;
     left: 6%;
