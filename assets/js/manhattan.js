@@ -83,8 +83,9 @@ var mobileSafari;
 		var p1 = Math.abs(swiper.translate) / $(swiper.el).width();
 		targetScrollProgress = p1;
 
+		// SPEED: change the last number
 		scrollProgress +=
-			Math.round(((targetScrollProgress - scrollProgress) / 10) * 1000) / 1000;
+			Math.round(((targetScrollProgress - scrollProgress) / 10) * 1000) / 1900;
 
 		var index_p1 = Math.floor(p1);
 		var fraction_p1 = scrollProgress - index_p1;
@@ -97,6 +98,7 @@ var mobileSafari;
 				"data-frame-number"
 			)
 		);
+		// Change 8 to number frames-hires + 1
 		if (isNaN(frame_p2)) {
 			frame_p2 = totalFrames - 8 + 20;
 		}
@@ -104,6 +106,7 @@ var mobileSafari;
 		var targetFrame = frame_p1 + (frame_p2 - frame_p1) * fraction_p1;
 
 		var n = Math.round(targetFrame);
+		// Change 8 to number frames-hires + 1
 		n = Math.min(totalFrames - 8, Math.max(0, n));
 
 		// console.log(p1, frame_p1, frame_p2, fraction_p1, n);
@@ -139,9 +142,9 @@ var mobileSafari;
 			}
 		)
 	);
-
+			console.log(imgArr)
 	var preloader = preloadImages(imgArr);
-
+		
 	preloader.onProgress = function (progress) {
 		imagesLoadProgress = progress;
 		var circle = $("circle.progress");
@@ -171,7 +174,7 @@ var mobileSafari;
 		slidesPerView: 1,
 		spaceBetween: 0,
 		mousewheel: true,
-		speed: 300,
+		speed: 500,
 		hashNavigation: false,
 		threshold: 30,
 	});
@@ -255,26 +258,26 @@ var mobileSafari;
 		$(".popover").removeClass("show");
 	});
 
-	$(".tile[data-target]").on("click", function (e) {
-		e.preventDefault();
-		var target = $(this).attr("data-target");
-		if (["spirits-menu", "food-dessert"].indexOf(target) > -1) {
-			if (target == "spirits-menu") {
-				window.open(
-					"https://regentsingapore.com.sg/wp-content/uploads/2021/06/Manhattan_Food_Spirits_Wine.pdf",
-					"_blank"
-				);
-			}
-			if (target == "food-dessert") {
-				window.open(
-					"https://regentsingapore.com.sg/wp-content/uploads/2021/06/Manhattan_Food_Spirits_Wine.pdf",
-					"_blank"
-				);
-			}
-		} else {
-			showPopover(target);
-		}
-	});
+	// $(".tile[data-target]").on("click", function (e) {
+	// 	e.preventDefault();
+	// 	var target = $(this).attr("data-target");
+	// 	if (["spirits-menu", "food-dessert"].indexOf(target) > -1) {
+	// 		if (target == "spirits-menu") {
+	// 			window.open(
+	// 				"https://regentsingapore.com.sg/wp-content/uploads/2021/06/Manhattan_Food_Spirits_Wine.pdf",
+	// 				"_blank"
+	// 			);
+	// 		}
+	// 		if (target == "food-dessert") {
+	// 			window.open(
+	// 				"https://regentsingapore.com.sg/wp-content/uploads/2021/06/Manhattan_Food_Spirits_Wine.pdf",
+	// 				"_blank"
+	// 			);
+	// 		}
+	// 	} else {
+	// 		showPopover(target);
+	// 	}
+	// });
 
 	$("[data-action=prev-slide-in-set], [data-action=next-slide-in-set]").on(
 		"click",
@@ -370,4 +373,5 @@ var mobileSafari;
 			imagesLoadProgress: imagesLoadProgress,
 		});
 	};
+	
 })(jQuery);
