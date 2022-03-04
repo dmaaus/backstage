@@ -127,15 +127,15 @@ var mobileSafari;
 	}
 
 	var imgArr = [];
-
-	for (var i = 10001; i < 10185; i++) {
-		imgArr.push("assets/img/old/frames/frame/" + i + ".jpg");
+	//9 frames 10185, 1 page = 10033
+	for (var i = 10001; i < 10033; i++) {
+		imgArr.push("assets/img/new/frames/frame/" + i + ".jpg");
 	}
 
 	imgArr = imgArr.concat(
 		["10032", "10052", "10072", "10092", "10112", "10132", "10152"].map(
 			function (f) {
-				return "assets/img/old/frames-hires/" + f + ".jpg";
+				return "assets/img/new/frames-hires/" + f + ".jpg";
 			}
 		)
 	);
