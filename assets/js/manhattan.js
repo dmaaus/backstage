@@ -142,7 +142,6 @@ var mobileSafari;
 			}
 		)
 	);
-			console.log(imgArr)
 	var preloader = preloadImages(imgArr);
 		
 	preloader.onProgress = function (progress) {
@@ -190,6 +189,11 @@ var mobileSafari;
 		if (!initialSwipeHint) {
 			initialSwipeHint = true;
 			hideHint("begin");
+		}
+		if ([0].indexOf(swiper.activeIndex) > -1) {
+			showHint("tagline");
+		} else {
+			hideHint("tagline");
 		}
 
 		if ([2, 3, 4, 5, 6, 7].indexOf(swiper.activeIndex) > -1) {
