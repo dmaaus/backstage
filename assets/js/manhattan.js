@@ -85,7 +85,7 @@ var mobileSafari;
 
 		// SPEED: change the last number
 		scrollProgress +=
-			Math.round(((targetScrollProgress - scrollProgress) / 10) * 1000) / 1900;
+			Math.round(((targetScrollProgress - scrollProgress) / 10) * 1000) / 1400;
 
 		var index_p1 = Math.floor(p1);
 		var fraction_p1 = scrollProgress - index_p1;
